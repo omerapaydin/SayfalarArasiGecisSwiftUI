@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct SonucEkrani: View {
+    @Environment(\.presentationMode) var presentationMode
     var body: some View {
         VStack {
             Button("KAPAT"){
-                
+                presentationMode.wrappedValue.dismiss()
             }
            
         }

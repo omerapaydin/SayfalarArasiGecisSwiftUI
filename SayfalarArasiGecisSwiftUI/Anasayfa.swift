@@ -8,14 +8,18 @@
 import SwiftUI
 
 struct Anasayfa: View {
+    @State private var oyunEkrani = false
     var body: some View {
         NavigationStack {
             VStack {
-                NavigationLink(destination: OyunEkran_()){
-                    Text("Başla")
+                Button("Başla"){
+                    oyunEkrani = true
                 }
                
             }.navigationTitle("AnaSayfa")
+                .navigationDestination(isPresented: $oyunEkrani){
+                    OyunEkran_()
+                }
         }
     }
 }
